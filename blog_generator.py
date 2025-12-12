@@ -19,14 +19,15 @@ def generate_blog(paragraph_topic):
 keep_writing = True
 
 while keep_writing: 
-    answer = input('Want to create blog? Y for yes and anything else for no ')
+    answer = input('Want to create blog? Type Y for yes and click any key for anything else -> )
 
     if (answer == 'Y'):
-        paragraph_topic = input('What should this blog be about? ')
+        paragraph_topic = input('Create a topic for the blog -> ')
         print(generate_blog(paragraph_topic))
 
     else:
         keep_writing = False
 
         
+
 
