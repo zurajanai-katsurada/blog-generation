@@ -8,7 +8,7 @@ client = OpenAI(api_key=config["API_KEY"])
 def generate_blog(paragraph_topic):
     response = client.completions.create(
         model= 'gpt-3.5-turbo-instruct',
-        prompt=f"Write a paragraph about this topic: {paragraph_topic}",
+        prompt=f"Create a blog on this topic: {paragraph_topic}",
         max_tokens= 400,
         temperature= 0.3
     )
@@ -19,13 +19,14 @@ def generate_blog(paragraph_topic):
 keep_writing = True
 
 while keep_writing: 
-    answer = input('Write a paragraph? Y for yes and anything else for no')
+    answer = input('Want to create blog? Y for yes and anything else for no ')
 
     if (answer == 'Y'):
-        paragraph_topic = input('What should the paragraph talk about? ')
+        paragraph_topic = input('What should this blog be about? ')
         print(generate_blog(paragraph_topic))
 
     else:
         keep_writing = False
 
         
+
